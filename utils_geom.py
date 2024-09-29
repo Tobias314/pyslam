@@ -64,7 +64,7 @@ def s1_dist_rad(angle1,angle2):
 def poseRt(R, t):
     ret = np.eye(4)
     ret[:3, :3] = R
-    ret[:3, 3] = t
+    ret[:3, 3] = np.array(t).squeeze()
     return ret   
 
 # [4x4] homogeneous inverse T^-1 from T represented with [3x3] R and [3x1] t  
